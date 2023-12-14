@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2018", // Выбор версии ECMAScript для вывода
+    "module": "commonjs", // Установка системы модулей
+    "typeRoots": ["./node_modules/@types", "./src/@types"],
+    "types": ["express"],
+    "lib": ["es2018"], // Определяет список библиотек, которые предоставляют функции для использования в коде
+    "outDir": "./dist", // Каталог для вывода скомпилированных файлов
+    "rootDir": "./src", // Каталог, содержащий исходные файлы TypeScript
+    "strict": true, // Включает строгий набор параметров типизации
+    "esModuleInterop": true, // Разрешает экспорт по умолчанию для модулей
+    "skipLibCheck": true, // Пропускает проверку типов файлов объявлений
+    "forceConsistentCasingInFileNames": true, // Запрещает несогласованный регистр в именах файлов
+    "resolveJsonModule": true // Разрешает импорт JSON файлов
+  },
+  "include": [
+    "src/**/*.ts" // Указывает TypeScript обрабатывать все файлы .ts в папке src
+  ],
+  "exclude": [
+    "node_modules", // Исключает папку node_modules из процесса компиляции
+    "**/*.spec.ts" // Исключает тестовые файлы из компиляции
+  ]
+}
