@@ -12,7 +12,12 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(
+  cors({
+    credentials: true, // Разрешение куков
+    origin: process.env.CLIENT_URL, // Адрес откуда можно получать куки
+  }),
+);
 app.use('/api', router);
 
 app.use(errorMiddleware); // Всегда последний
